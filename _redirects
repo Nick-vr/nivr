@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://nivr.netlify.com/* https://www.nivr.dev/:splat 301!
