@@ -35,9 +35,14 @@ const IndexPage = () => (
   <Layout>
     <Wrap>
       <Dot />
-      <h1>Hi</h1>
-      <h1>I'm</h1>
-      <h1>Nick</h1>
+      <h1>
+        Hi
+        <br />
+        I'm
+        <br />
+        Nick
+      </h1>
+
       <Dot />
     </Wrap>
   </Layout>
