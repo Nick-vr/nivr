@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: `Nick's portfolio`,
+    description: `My portfolio`,
+    author: `Nick Van Royen`,
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -23,8 +28,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
   ],
-}
+};

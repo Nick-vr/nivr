@@ -1,51 +1,66 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import React from 'react';
+import Particles from 'react-particles-js';
 
-import Layout from '../components/layout'
-
-const Wrap = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-
-  h1 {
-    margin-bottom: -20px;
-  }
-`
-
-const blink = keyframes`
-  0%{background-color: #FFF;}
-  49%{background-color: #000;}
-  50%{background-color: #000;}
-  90%{background-color: #FFF;}
-  99%{background-color: #000;}
-  100%{background-color: #FFF;}
-`
-
-const Dot = styled.div`
-  animation: ${blink} 1.7s infinite ease;
-  align-self: center;
-  width: 20px;
-  height: 20px;
-  margin-top: 100px;
-`
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
-    <Wrap>
-      <Dot />
-      <h1>
-        Hi
-        <br />
-        I'm
-        <br />
-        Nick
-      </h1>
-
-      <Dot />
-    </Wrap>
+    <SEO title="Nick's portfolio" />
+    <Particles
+      params={{
+        particles: {
+          number: {
+            value: 160,
+            density: {
+              enable: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              speed: 4,
+              size_min: 0.3,
+            },
+          },
+          line_linked: {
+            enable: false,
+          },
+          move: {
+            random: true,
+            speed: 1,
+            direction: 'top',
+            out_mode: 'out',
+          },
+        },
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: 'bubble',
+            },
+            onclick: {
+              enable: true,
+              mode: 'repulse',
+            },
+          },
+          modes: {
+            bubble: {
+              distance: 250,
+              duration: 2,
+              size: 0,
+              opacity: 0,
+            },
+            repulse: {
+              distance: 400,
+              duration: 4,
+            },
+          },
+        },
+      }}
+    />
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

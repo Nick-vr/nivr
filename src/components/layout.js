@@ -1,8 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { createGlobalStyle } from 'styled-components'
+import React from 'react';
+import Proptypes from 'prop-types';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
+${reset}
 html,
   body {
     box-sizing: border-box;
@@ -19,6 +21,9 @@ html,
     border-bottom: 5px solid #FFF;
     background: #000;
     color: #FFF;
+  }
+  canvas {
+    min-height: calc(100vh - 35px);
   }
 
   *,
@@ -37,38 +42,17 @@ html,
     font-family: inherit;
   }
 
-`
+`;
 
 const Layout = ({ children }) => (
   <>
-    <Helmet
-      title="Nick :)"
-      meta={[
-        {
-          name: 'viewport',
-          content:
-            'width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no',
-        },
-        {
-          name: 'description',
-          content: 'Nick Van Royen portfolio',
-        },
-        {
-          name: 'keywords',
-          content: 'Nick Van Royen, portfolio',
-        },
-      ]}
-    >
-      <link
-        href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,700"
-        rel="stylesheet"
-      />
-      <html lang="en" />
-    </Helmet>
-
-    {children}
     <GlobalStyle />
+    {children}
   </>
-)
+);
 
-export default Layout
+Layout.propTypes = {
+  children: Proptypes.node.isRequired,
+};
+
+export default Layout;
